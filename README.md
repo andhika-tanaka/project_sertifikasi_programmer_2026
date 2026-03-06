@@ -13,7 +13,7 @@ Aplikasi web sederhana untuk mengelola data buku dengan fitur CRUD (Create, Read
 
 ### 1. Masuk ke Project
 ```bash
-cd e:\Project\htdocs\project_sertifikasi
+cd \htdocs\project_sertifikasi
 ```
 
 ### 2. Install Dependencies
@@ -75,8 +75,11 @@ project_sertifikasi/
 │   ├── edit.php                # Halaman edit buku
 │   ├── delete.php              # Handler delete buku
 │   └── export.php              # Handler export CSV/PDF
-├── files/                       # Folder untuk menyimpan laporan
-├── vendor/                      # Dependencies Composer
+├── files/                      # Folder untuk menyimpan laporan
+├── tests/                      # Unit test cases
+│   ├── BooksTest.php
+│   └── ReportsTest.php
+├── vendor/                     # Dependencies Composer
 ├── composer.json               # File konfigurasi Composer
 ├── index.php                   # Halaman utama
 └── README.md                   # File dokumentasi ini
@@ -171,6 +174,24 @@ Class `App\Services\Reports` menyediakan method:
 ### Operasi tidak tersimpan
 - Periksa MySQL user punya permission `INSERT`, `UPDATE`, `DELETE`
 - Verifikasi struktur tabel books sudah sesuai
+
+## Unit Testing
+
+Proyek ini mencakup beberapa **unit test** yang divalidasi menggunakan PHPUnit. Saat ini ada dua kelas tes di direktori `tests/`:
+
+- `BooksTest.php`  – memastikan operasi CRUD model buku bekerja benar
+- `ReportsTest.php` – menguji output CSV dan PDF dari `App\Services\Reports`
+
+Untuk menjalankan seluruh test:
+
+```bash
+# jalankan:
+vendor/bin/phpunit
+```
+
+Hasil test akan menampilkan status setiap metode dan memastikan
+laporan CSV/PDF dibuat di folder `tests/files` tanpa menulis ke basis data
+(karena transaksi dibatalkan pada `tearDown`).
 
 ## Author
 
