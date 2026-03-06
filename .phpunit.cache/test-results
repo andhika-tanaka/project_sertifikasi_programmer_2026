@@ -1,0 +1,1 @@
+{"version":2,"defects":{"ReportsTest::testGenerateReport":7},"times":{"BooksTest::testInsertBook":0.097,"BooksTest::testGetBookById":0.043,"BooksTest::testUpdateBook":0.068,"ReportsTest::testGenerateCSV":0.083,"BooksTest::testDeleteBook":0.095,"ReportsTest::testGenerateReport":0.902}}
