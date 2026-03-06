@@ -13,7 +13,7 @@ Aplikasi web sederhana untuk mengelola data buku dengan fitur CRUD (Create, Read
 
 ### 1. Masuk ke Project
 ```bash
-cd e:\Project\htdocs\project_sertifikasi
+cd \htdocs\project_sertifikasi
 ```
 
 ### 2. Install Dependencies
